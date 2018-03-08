@@ -22,6 +22,30 @@
     {
       "project": "apps/basic-lazy-loading/e2e/tsconfig.e2e.json",
       "exclude": "**/node_modules/**"
+    },
+    {
+      "project": "apps/basic-preload-all/src/tsconfig.app.json",
+      "exclude": "**/node_modules/**"
+    },
+    {
+      "project": "apps/basic-preload-all/e2e/tsconfig.e2e.json",
+      "exclude": "**/node_modules/**"
+    },
+    {
+      "project": "apps/basic-custom-strategy/src/tsconfig.app.json",
+      "exclude": "**/node_modules/**"
+    },
+    {
+      "project": "apps/basic-custom-strategy/e2e/tsconfig.e2e.json",
+      "exclude": "**/node_modules/**"
+    },
+    {
+      "project": "apps/markov-strategy/src/tsconfig.app.json",
+      "exclude": "**/node_modules/**"
+    },
+    {
+      "project": "apps/markov-strategy/e2e/tsconfig.e2e.json",
+      "exclude": "**/node_modules/**"
     }
   ],
   "test": {
@@ -31,9 +55,84 @@
   },
   "apps": [
     {
+      "name": "basic-custom-strategy",
+      "root": "apps/basic-custom-strategy/src",
+      "outDir": "dist/apps/basic-custom-strategy",
+      "assets": [
+        "assets",
+        "favicon.ico"
+      ],
+      "index": "index.html",
+      "main": "main.ts",
+      "polyfills": "polyfills.ts",
+      "test": "../../../test.js",
+      "tsconfig": "tsconfig.app.json",
+      "testTsconfig": "../../../tsconfig.spec.json",
+      "prefix": "app",
+      "styles": [
+        "styles.css"
+      ],
+      "scripts": [],
+      "environmentSource": "environments/environment.ts",
+      "environments": {
+        "dev": "environments/environment.ts",
+        "prod": "environments/environment.prod.ts"
+      }
+    },
+    {
       "name": "basic-lazy-loading",
       "root": "apps/basic-lazy-loading/src",
       "outDir": "dist/apps/basic-lazy-loading",
+      "assets": [
+        "assets",
+        "favicon.ico"
+      ],
+      "index": "index.html",
+      "main": "main.ts",
+      "polyfills": "polyfills.ts",
+      "test": "../../../test.js",
+      "tsconfig": "tsconfig.app.json",
+      "testTsconfig": "../../../tsconfig.spec.json",
+      "prefix": "app",
+      "styles": [
+        "styles.css"
+      ],
+      "scripts": [],
+      "environmentSource": "environments/environment.ts",
+      "environments": {
+        "dev": "environments/environment.ts",
+        "prod": "environments/environment.prod.ts"
+      }
+    },
+    {
+      "name": "basic-preload-all",
+      "root": "apps/basic-preload-all/src",
+      "outDir": "dist/apps/basic-preload-all",
+      "assets": [
+        "assets",
+        "favicon.ico"
+      ],
+      "index": "index.html",
+      "main": "main.ts",
+      "polyfills": "polyfills.ts",
+      "test": "../../../test.js",
+      "tsconfig": "tsconfig.app.json",
+      "testTsconfig": "../../../tsconfig.spec.json",
+      "prefix": "app",
+      "styles": [
+        "styles.css"
+      ],
+      "scripts": [],
+      "environmentSource": "environments/environment.ts",
+      "environments": {
+        "dev": "environments/environment.ts",
+        "prod": "environments/environment.prod.ts"
+      }
+    },
+    {
+      "name": "markov-strategy",
+      "root": "apps/markov-strategy/src",
+      "outDir": "dist/apps/markov-strategy",
       "assets": [
         "assets",
         "favicon.ico"

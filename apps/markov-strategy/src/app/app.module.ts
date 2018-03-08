@@ -3,6 +3,9 @@ import { AppComponent } from './app.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NxModule } from '@nrwl/nx';
 import { RouterModule, Routes } from '@angular/router';
+import {MarkovModelService} from './markov-model.service';
+import {FormsModule} from '@angular/forms';
+import {MarkovPreloadingStrategy} from './markov-preloading-strategy';
 
 const routes: Routes = [
   {
@@ -32,8 +35,18 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [BrowserModule, NxModule.forRoot(), RouterModule.forRoot(routes)],
+  imports: [
+    BrowserModule,
+    NxModule.forRoot(),
+    FormsModule,
+    RouterModule.forRoot(routes, {
+      preloadingStrategy: MarkovPreloadingStrategy
+    })],
   declarations: [AppComponent],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [
+    MarkovModelService,
+    MarkovPreloadingStrategy
+  ]
 })
 export class AppModule {}

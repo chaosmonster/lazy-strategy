@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import {MarkovModelService} from '../../markov-model.service';
 
 @Component({
   selector: 'app-component-f',
@@ -6,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./component-f.component.css']
 })
 export class ComponentFComponent implements OnInit {
-  constructor() {}
+  constructor(private route: ActivatedRoute, private markovModelService: MarkovModelService) {
+    this.markovModelService.updateCurrentModule(this.route.parent.routeConfig.path);
+  }
+
 
   ngOnInit() {}
 }

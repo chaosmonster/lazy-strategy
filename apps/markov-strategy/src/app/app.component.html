@@ -1,3 +1,19 @@
-<h1>Basic lazy loading</h1>
-<p>no strategy</p>
+<h1>Markov Preloading Strategy</h1>
+<p>uses a Markov model</p>
+
+
 <router-outlet></router-outlet>
+
+
+<a style="cursor: pointer; font-size: 8px;" (click)="hide = !hide"><span [hidden]="!hide">Show</span><span [hidden]="hide">Hide</span> Markov Model Tester</a>
+<div [hidden]="hide">
+  <hr>
+  <h4>Test model</h4>
+  <p>
+    nextState$: {{markovModuleService.nextState$ | async}}
+  </p>
+  <p>
+    <input [(ngModel)]="nextModule">
+    <button (click)="update()">update</button>
+  </p>
+</div>

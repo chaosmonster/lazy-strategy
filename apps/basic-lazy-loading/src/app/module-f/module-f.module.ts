@@ -1,7 +1,7 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {RouterModule, Routes} from '@angular/router';
-import {ComponentFComponent} from './component-f/component-f.component';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
+import { ComponentFComponent } from './component-f/component-f.component';
 
 const routesModuleF: Routes = [
   {
@@ -11,11 +11,7 @@ const routesModuleF: Routes = [
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    RouterModule.forChild(routesModuleF)
-  ],
+  imports: [CommonModule, RouterModule.forChild(routesModuleF)],
   declarations: [ComponentFComponent]
 })
-export class ModuleFModule {
-}
+export class ModuleFModule {}

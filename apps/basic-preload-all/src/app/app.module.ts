@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NxModule } from '@nrwl/nx';
-import { RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
@@ -32,7 +32,13 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [BrowserModule, NxModule.forRoot(), RouterModule.forRoot(routes)],
+  imports: [
+    BrowserModule,
+    NxModule.forRoot(),
+    RouterModule.forRoot(routes, {
+      preloadingStrategy: PreloadAllModules
+    })
+  ],
   declarations: [AppComponent],
   bootstrap: [AppComponent]
 })

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {RouterModule, Routes} from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { ComponentBComponent } from './component-b/component-b.component';
 
 const routesModuleB: Routes = [
@@ -11,10 +11,7 @@ const routesModuleB: Routes = [
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    RouterModule.forChild(routesModuleB)
-  ],
+  imports: [CommonModule, RouterModule.forChild(routesModuleB)],
   declarations: [ComponentBComponent]
 })
-export class ModuleBModule { }
+export class ModuleBModule {}
